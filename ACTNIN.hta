@@ -1,0 +1,135 @@
+<HTML>
+<HEAD>
+  <TITLE>NIN Activation</TITLE>
+    <HTA:APPLICATION ID="oHTA"
+     APPLICATIONNAME="myApp"
+     BORDER="thin"
+     BORDERSTYLE="normal"
+     CAPTION="yes"
+     ICON="favicon.ico"
+     MAXIMIZEBUTTON="no"
+     MINIMIZEBUTTON="no"
+     SHOWINTASKBAR="yes"
+     SINGLEINSTANCE="no"
+     SYSMENU="yes"
+     VERSION="1.0"
+     WINDOWSTATE="maximize"/>
+
+  <SCRIPT>
+
+    function A(){
+                 hd.innerHTML="Glo Sim";
+                 
+                 bd.style.color = "green";
+                 bd.style.shadow = "blue 2px"
+                 pg.src = "favicon1.ico";
+          
+             }
+
+    function G(){
+                     
+              hd.innerHTML = "MTN Sim";
+              pg.src = "favicon.ico";
+              //document.body.background-color = "gray";
+              bd.style.color = "yellow";
+               
+              }
+
+    function N(){
+             
+             
+                     //alert(pg.src);
+              
+                   hd.innerHTML = "9mobile Sim";
+                   bd.style.color = "green";
+                 pg.src = "favicon3.ico";
+        }
+
+
+
+    function M(){
+
+
+
+
+
+                 hd.innerHTML="Airtel Sim";
+                 bd.style.color = "red";
+                 pg.src = "favicon2.ico";
+
+
+
+           }      
+
+
+   function act(){
+                  //prompt("Please Type NIN :");
+                 //alert("Sim will be Activated within 24 hours");
+                    confirm("NIN Has been Activated ");
+                    document.getElementById("nin").innerText ="";
+}
+
+    
+
+  /* This function also retrieves the value of the commandLine property,
+     which cannot be set as an attribute.  */
+
+   
+  function window.onload()
+  {
+     sTempStr = "applicationName  = " + oHTA.applicationName + "\n" + 
+                "border           = " + oHTA.border          + "\n" +
+                "borderStyle      = " + oHTA.borderStyle     + "\n" + 
+                "caption          = " + oHTA.caption         + "\n" +
+                "commandLine      = " + oHTA.commandLine     + "\n" +
+                "icon             = " + oHTA.icon            + "\n" +
+                "maximizeButton   = " + oHTA.maximizeButton  + "\n" +
+                "minimizeButton   = " + oHTA.minimizeButton  + "\n" + 
+                "showInTaskBar    = " + oHTA.showInTaskbar   + "\n" +
+                "singleInstance   = " + oHTA.singleInstance  + "\n" +  
+                "sysMenu          = " + oHTA.sysMenu         + "\n" + 
+                "version          = " + oHTA.version         + "\n" + 
+                "windowState      = " + oHTA.windowState     + "\n" ;
+          
+     //oPre.innerText = sTempStr; 
+   var hd = document.getElementById("hd");
+   var b =  document.getElementById("bd");
+    pg  = document.getElementById("plg");
+  }
+  function drawOnCanvas(file) {
+  var reader = new FileReader();
+
+  reader.onload = function (e) {
+    var dataURL = e.target.result,
+        c = document.querySelector('canvas'), 
+        // see Example 4
+        ctx = c.getContext('2d'),
+        img = new Image();
+
+    img.onload = function() {
+      c.width = img.width;
+      c.height = img.height;
+      ctx.drawImage(img, 0, 0);
+    };
+
+    img.src = dataURL;
+  };
+
+  reader.readAsDataURL(file);
+}
+  </SCRIPT>
+</HEAD>
+<BODY SCROLL="no" background="ncc.png"  >
+<center>
+<div style="width:600;height:300;"></dv>
+<div style="float:center;border:solid 3px green;text-align:center;vertical-align:middle;width:500;height:400;">
+  <img src="nimc.png" style="width:400;height:200;" ></img>
+
+<input type="Number" size="11" maxlength="11" id="nin" name="nin">
+<button type="button" id="tn" name="btn" onClick="act()">Activate</button>
+<button type="button" id="tn" name="btn">Check NiN</button>
+</div>
+<center>
+
+
+</BODY>
